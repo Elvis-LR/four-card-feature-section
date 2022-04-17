@@ -1,0 +1,147 @@
+    /**** R E S E T  start****/
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+all: unset;
+display: revert;
+}
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+a, button {
+cursor: revert;
+}
+ol, ul, menu {
+list-style: none;
+}
+img {
+max-width: 100%;
+}
+table {
+border-collapse: collapse;
+}
+textarea {
+white-space: revert;
+}
+meter {
+-webkit-appearance: revert;
+appearance: revert;
+}
+::placeholder {
+color: unset;
+}
+:where([hidden]) {
+display: none;
+}
+:where([contenteditable]) {
+-moz-user-modify: read-write;
+-webkit-user-modify: read-write;
+overflow-wrap: break-word;
+-webkit-line-break: after-white-space;
+}
+:where([draggable=
+true
+]) {
+-webkit-user-drag: element;
+}
+    /**** R E S E T  end****/
+
+
+
+    /****** ## Colors
+
+### Primary
+
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+### Neutral
+
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%)
+****/
+
+    main{
+       width: 375px;
+       font-family: 'Poppins', sans-serif;
+       padding: 2em;
+       color: hsl(229, 6%, 66%);
+    }
+/***** H E A D E R    ******/
+
+    header{
+        text-align: center;
+    }
+    header>h2{
+        font-size: clamp(1.5rem, 7vw, 5.6rem);
+        font-weight: 600;
+        color: hsl(234, 12%, 34%);
+    }
+    header h2:first-child{
+        font-weight: 200;
+    }
+
+    header p {
+        font-size: clamp(1rem, 2vw, 2.8rem);
+        font-weight: 200;
+        margin-top: 1em;
+    }
+    /********** c A R D S *****/
+
+    .card{
+        width: 100%;
+        margin-top: 2.5em;
+        font-weight: 200;
+        font-size: 0.9rem;
+
+    }
+    h3{
+        font-size: 2.5vw;
+        font-weight: 600;
+        color: hsl(234, 12%, 34%);
+        margin-bottom: 0.4rem;
+    }
+    .uno, .dos, .tres, .cuatro{
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.5rem;
+        margin-bottom: 2em;
+        box-shadow: inset 0px 18px 1px -14px hsl(0, 78%, 62%), 0px 10px 28px -5px hsl(229, 6%, 66%, 0.5);
+    }
+    .uno{
+        box-shadow: inset 0px 18px 1px -14px hsl(180, 62%, 55%), 0px 10px 28px -5px hsl(229, 6%, 66%, 0.5);
+    }
+    .tres{
+        box-shadow: inset 0px 18px 1px -14px hsl(34, 97%, 64%), 0px 10px 28px -5px hsl(229, 6%, 66%, 0.5);
+    }
+    .cuatro{
+        box-shadow: inset 0px 18px 1px -14px hsl(212, 86%, 64%), 0px 10px 28px -5px hsl(229, 6%, 66%, 0.5);
+    }
+    img{
+        margin-top: 2em;
+        align-self: center;
+        align-self: flex-end;
+    }
+    @media (min-width: 500px){
+        main{
+            width: 1440px;
+        }   
+        header{
+            width: 100%;
+        }
+        .uno, .dos, .tres, .cuatro{
+            max-width: 350px;
+            min-width: 310px;
+        }
+        .card{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+        }
+    }
+
+    
