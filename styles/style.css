@@ -63,12 +63,18 @@ true
 - Grayish Blue: hsl(229, 6%, 66%)
 - Very Light Gray: hsl(0, 0%, 98%)
 ****/
-
+/* *{
+    border: solid 1px red;
+} */
+    body{
+        background-color: hsl(0, 0%, 98%);
+    }
     main{
-       width: 375px;
        font-family: 'Poppins', sans-serif;
-       padding: 2em;
        color: hsl(229, 6%, 66%);
+       width: clamp(375px, 80%, 1440px);
+       margin: 0 auto;
+
     }
 /***** H E A D E R    ******/
 
@@ -76,7 +82,7 @@ true
         text-align: center;
     }
     header>h2{
-        font-size: clamp(1.5rem, 7vw, 5.6rem);
+        font-size: clamp(1.5em, 3vw, 4rem);
         font-weight: 600;
         color: hsl(234, 12%, 34%);
     }
@@ -85,18 +91,19 @@ true
     }
 
     header p {
-        font-size: clamp(1rem, 2vw, 2.8rem);
+        font-size: clamp(1rem, 1vw, 1.5rem);
         font-weight: 200;
         margin-top: 1em;
     }
     /********** c A R D S *****/
 
     .card{
-        width: 100%;
         margin-top: 2.5em;
         font-weight: 200;
         font-size: 0.9rem;
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     h3{
         font-size: 2.5vw;
@@ -105,11 +112,10 @@ true
         margin-bottom: 0.4rem;
     }
     .uno, .dos, .tres, .cuatro{
+        width: clamp(310px, 100%, 350px);
         padding: 1.5em;
-        display: flex;
-        flex-direction: column;
         border-radius: 0.5rem;
-        margin-bottom: 2em;
+        margin: 1em;
         box-shadow: inset 0px 18px 1px -14px hsl(0, 78%, 62%), 0px 10px 28px -5px hsl(229, 6%, 66%, 0.5);
     }
     .uno{
@@ -123,24 +129,33 @@ true
     }
     img{
         margin-top: 2em;
-        align-self: center;
-        align-self: flex-end;
+        display: block;
+        margin-left: auto;
     }
-    @media (min-width: 500px){
-        main{
-            width: 1440px;
-        }   
-        header{
-            width: 100%;
-        }
-        .uno, .dos, .tres, .cuatro{
-            max-width: 350px;
-            min-width: 310px;
+    @media (min-width: 1350px){
+        header>p{
+            padding: 0 24%;
         }
         .card{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2em;
+            align-self: center;
+            grid-template-areas: 
+            "a b d"
+            "a c d";
+          
+        }
+        .tres{
+           grid-area: c;
+        }
+        .cuatro{
+            grid-row: -1/-3;
+            align-self: center;
+        }
+        .uno{
+            grid-row: 1/3;
+            align-self: center;
+      
         }
     }
 
