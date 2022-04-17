@@ -133,7 +133,7 @@ true
         display: block;
         margin-left: auto;
     }
-    @media (min-width: 1350px){
+    @media (min-width: 960px){
         header>p{
             padding: 0 24%;
         }
