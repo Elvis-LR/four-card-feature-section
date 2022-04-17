@@ -68,6 +68,7 @@ true
 } */
     body{
         background-color: hsl(0, 0%, 98%);
+        margin-top: 50px;
     }
     main{
        font-family: 'Poppins', sans-serif;
@@ -106,7 +107,7 @@ true
         justify-content: center;
     }
     h3{
-        font-size: 2.5vw;
+        font-size: clamp(1.2rem, 2.3vh, 3rem);
         font-weight: 600;
         color: hsl(234, 12%, 34%);
         margin-bottom: 0.4rem;
